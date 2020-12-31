@@ -5,13 +5,15 @@ class Counter extends Component {
     super(props);
     //state 정의
     this.state = {
-      count: 0,
+      count: this.props.count,
     };
     this.increaseCount = this.increaseCount.bind(this);
   }
   increaseCount() {
     //state 변경
-    this.setState({ count: this.state.count + 1 });
+    this.setState(({ count }) => ({
+      count: count + 1,
+    }));
   }
 
   render() {
