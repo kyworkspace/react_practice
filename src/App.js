@@ -1,12 +1,15 @@
+import React, { Component } from 'react';
 import './App.css';
-import StateExample from './03/StateExample';
+import Counter from './03/Counter';
 
-function App() {
-  return (
-    <div className="body">
-      <StateExample/>
+class App extends Component {
+  render() {
+    return (
+      <div className="body">
+      <Counter/>
     </div>
-  );
+    );
+  }
 }
 
 export default App;
