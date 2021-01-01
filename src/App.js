@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import ScrollSpy from './03/ScrollSpy';
+import Input from './03/Input';
 
 class App extends Component {
     render() {
     return (
-      <ScrollSpy/>
+      <Input name="kyp" type="number" errorMassage="에러" label='라벨' autoFocus={true} onFocus={()=>{console.log("엘리먼트선택")}}/>
     );
   }
 }
