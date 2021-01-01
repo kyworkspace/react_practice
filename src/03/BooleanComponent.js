@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class BooleanConponent extends Component {
+class BooleanComponent extends Component {
     render() {
         const message = this.props.bored ? '놀러가자' : '일해라';
         return (
@@ -11,4 +11,4 @@ class BooleanConponent extends Component {
     }
 }
 
-export default BooleanConponent;
+export default BooleanComponent;

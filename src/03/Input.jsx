@@ -40,6 +40,7 @@ class Input extends PureComponent {
       <label>
         {label}
         <input
+          key={`input_${name}`}
           id={`input_${name}`}
           ref={this.setRef}
           onChange={this.handleChange}
