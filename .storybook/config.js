@@ -4,6 +4,8 @@ import interopRequireDefault from 'babel-runtime/helpers/interopRequireDefault';
 //스토리북에서 JSX 코드를 확인하는 확장도구 임포드
 import JSXAddon from 'storybook-addon-jsx';
 
+import '../src/sass/materialize.scss'
+
 
 function loadStories(){
     //스토리 파일을 여기에 추가함

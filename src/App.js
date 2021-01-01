@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import Input from './03/Input';
+import './sass/materialize.scss'
 
 class App extends Component {
     render() {
     return (
-      <Input name="kyp" type="number" errorMassage="에러" label='라벨' autoFocus={true} onFocus={()=>{console.log("엘리먼트선택")}}/>
+     <nav>
+       <div className="nav-wrapper">
+         <div>뚜잇뚜잇츄</div>
+       </div>
+     </nav>
     );
   }
 }
