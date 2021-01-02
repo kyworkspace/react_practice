@@ -59,7 +59,7 @@ Button.defaultProps = {
   primary: false,
 };
 
-export default withStyles(({ color, size, unit }) => ({
+export default withStyles(({ color, size, unit, responsive }) => ({
   default: {
     border: 1,
     borderStyle: "solid",
@@ -68,6 +68,10 @@ export default withStyles(({ color, size, unit }) => ({
     color: color.default,
     fontSize: size.md,
     padding: unit * 2,
+    cursor: "pointer",
+    [responsive.small]: {
+      width: "100%",
+    },
   },
   xlarge: {
     fontSize: size.xg,
