@@ -24,5 +24,7 @@ function compose(...funcArr){
     },function(k){return k;})
 }
 const formulaWithCompose = compose(multiplyTwo,multiplyThree,addFour);
-//배열을 전달하지 않고 원하는 만큼 전달해 조립
 
+
+formulaWithCompose = compose(multiplyX(2),multiplyX(3),addX(4));
+formulaWithCompose = addX(4)(multiplyX(3)(multiplyX(2)));
