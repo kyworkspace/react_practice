@@ -1,5 +1,7 @@
 import React from "react";
 import lifecycle from "recompose/lifecycle";
+import compose from "recompose/compose";
+import withLoading from "./withLoading";
 
 function Page({ content }) {
   //lifeCycle 함수 안의 this.statecontent값을 프로퍼티로 전달함
@@ -38,3 +40,9 @@ export const withLoadData = lifecycle({
 
 export const PageWithLoadData = withLoadData(Page);
 //lifeCycle 함수로 만든  하이어오더 컴포넌트 생성함수를 Page 컴포넌트에 적용
+
+export const PageWithLoadDataAndLoading = compose(
+  withLoadData,
+  withLoading("서버요청중")
+)(Page);
+//compose로 하이어오더 컴포넌트 생성함수를 묶은 다음 Page 컴포넌트에 적용
