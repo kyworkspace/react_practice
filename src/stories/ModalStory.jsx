@@ -9,6 +9,7 @@ import ModalProvider, { Consumer } from "../06/ModalProvider";
 
 import ModalProviderWithKey, {
   CONFIRM_DELETE_MODAL,
+  CREATE_MEMBER_MODAL,
 } from "../06/ModalProviderWithKey";
 import { Consumer as ModalConsumer } from "../06/ModalContext";
 
@@ -41,8 +42,19 @@ storiesOf("Modal", module)
         <Text>다음 버튼을 눌러 모달을 실행합니다.</Text>
         <ModalConsumer>
           {({ openModal }) => (
-            <Button onPress={() => openModal(CONFIRM_DELETE_MODAL)}>
+            <Button
+              onPress={() =>
+                openModal(CONFIRM_DELETE_MODAL, { id: 1, name: "상품1" })
+              }
+            >
               모달 열기
+            </Button>
+          )}
+        </ModalConsumer>
+        <ModalConsumer>
+          {({ openModal }) => (
+            <Button onPress={() => openModal(CREATE_MEMBER_MODAL)}>
+              회원가입
             </Button>
           )}
         </ModalConsumer>
