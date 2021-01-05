@@ -11,7 +11,6 @@ class InputWithStyle extends PureComponent {
   handleChange(e) {
     const { name, onChange } = this.props;
     if (onChange) {
-      console.log(name, e.target.value);
       onChange(name, e.target.value);
     }
   }
@@ -35,11 +34,11 @@ class InputWithStyle extends PureComponent {
   }
 
   render() {
-    const { errorMassage, label, name, value, type, onFocus } = this.props;
+    const { errorMessage, label, name, value, type, onFocus } = this.props;
     return (
       <div className="input-field">
         <input
-          className={`validate ${errorMassage && "invalid"}`}
+          className={`validate ${errorMessage && "invalid"}`}
           key={`input_${name}`}
           id={`input_${name}`}
           ref={this.setRef}
@@ -51,9 +50,9 @@ class InputWithStyle extends PureComponent {
         <label htmlFor={`input_${name}`} className="active">
           {label}
         </label>
-        {errorMassage && (
-          <span className="helper-text" data-error={errorMassage}>
-            {errorMassage}
+        {errorMessage && (
+          <span className="helper-text" data-error={errorMessage}>
+            {errorMessage}
           </span>
         )}
       </div>
