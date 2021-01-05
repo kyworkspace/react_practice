@@ -5,6 +5,12 @@ import Modal from "../06/Modal";
 import Button from "../04/Button";
 import Text from "../04/Text";
 import ButtonWithModal from "../06/ButtonWithModal";
+import ModalProvider, { Consumer } from "../06/ModalProvider";
+
+import ModalProviderWithKey, {
+  CONFIRM_DELETE_MODAL,
+} from "../06/ModalProviderWithKey";
+import { Consumer as ModalConsumer } from "../06/ModalContext";
 
 storiesOf("Modal", module)
   .addWithJSX("기본 설정", () => (
@@ -16,4 +22,30 @@ storiesOf("Modal", module)
       <Button>닫기</Button>
     </Modal>
   ))
-  .addWithJSX("ButtonWithModal", () => <ButtonWithModal />);
+  .addWithJSX("ButtonWithModal", () => <ButtonWithModal />)
+  .addWithJSX("ModalProvider", () => (
+    <ModalProvider>
+      <div>
+        <Text>모달 여는 버튼</Text>
+        <Consumer>
+          {({ openModal }) => <Button onPress={() => openModal()}>삭제</Button>}
+        </Consumer>
+      </div>
+    </ModalProvider>
+  ))
+
+  //ModalProvider
+  .addWithJSX("ModalProvider", () => (
+    <ModalProviderWithKey>
+      <div>
+        <Text>다음 버튼을 눌러 모달을 실행합니다.</Text>
+        <ModalConsumer>
+          {({ openModal }) => (
+            <Button onPress={() => openModal(CONFIRM_DELETE_MODAL)}>
+              모달 열기
+            </Button>
+          )}
+        </ModalConsumer>
+      </div>
+    </ModalProviderWithKey>
+  ));
