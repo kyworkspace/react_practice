@@ -2,8 +2,10 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 
 import HomePageComponent from "../06/HomePageComponent";
-import HomePageWithprovider from "../06/HomePageWithProvider";
+import HomePageWithProvider from "../06/HomePageWithProvider";
+import HomaPageWithTwoProvider from "../06/HomePageWithTwoProvider";
 
 storiesOf("HomePageComponenet", module)
   .addWithJSX("컨텍스트 예제 ", () => <HomePageComponent />)
-  .addWithJSX("Provider예제", () => <HomePageWithprovider />);
+  .addWithJSX("Provider예제", () => <HomePageWithProvider />)
+  .addWithJSX("이중 Provider 예제", () => <HomaPageWithTwoProvider />);
