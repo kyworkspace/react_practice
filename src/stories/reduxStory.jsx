@@ -1,0 +1,11 @@
+import React from "react";
+import { storiesOf } from "@storybook/react";
+
+import ReduxApp01 from "../07/ReduxApp01";
+import ReduxApp02 from "../07/ReduxApp02";
+import ReduxApp03 from "../07/ReduxApp03";
+
+storiesOf("ReduxApp", module)
+  .addWithJSX("기본 설정", () => <ReduxApp01 />)
+  .addWithJSX("기본 액션 호출", () => <ReduxApp02 />)
+  .addWithJSX("기본 리듀서 구현", () => <ReduxApp03 />);
